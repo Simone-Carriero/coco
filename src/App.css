@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  background-color: #0000000e;
+}
+
+
+.container__title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 1rem;
+  text-indent: 1rem;
+  color: #03c032;
+  z-index: 2;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.container__button-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container__button {
+  position: relative;
+  z-index: 2;
+  height: 5rem;
+  width: 5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  background-image: linear-gradient(#dab9b9, #e7e7e7);
+  box-shadow: 0 3px 8px #6b6a6a, inset 0 2px 3px #fff;
+}
+
+.container__button:active {
+  transform: scale(.9);
+  background: #f01414c5;
+}
+
+
+.waves {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  border-radius: 100%;
+  animation: waves 3s ease-in-out infinite;
+  background-image: linear-gradient(to right, #6400a4, #5e07b5, #5411c6, #411bd8, #1225eb);
+ 
+}
+
+.wave-1 {
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  animation-delay: 1s;
+}
+
+.wave-3 {
+  animation-delay: 2s;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(.2, .2);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(.9, .9);
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container__title {
+    font-size: 5rem;
+  }
+  
+}
+
+@media only screen and (min-width: 900px) {
+  .container__title {
+    font-size: 6rem;
+  }
+
+  .container__button {
+    width: 6rem;
+    height: 6rem;
+  }
+}

@@ -1,9 +1,97 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import LanguageSet from './component/LanguageSet';
+import { commandsEN, commandsES, commandsIT } from './commands';
+
+
+
+
 import './App.css';
 
 function App() {
+
+  const [language, setLanguage] = useState('en-US')
+  const [commands, setCommands] = useState(commandsEN)
+
+  const {
+    browserSupportsSpeechRecognition,
+    listening
+  } = useSpeechRecognition({ commands })
+
+  useEffect(() => {
+    switch (language) {
+      case 'en-US':
+        setCommands(commandsEN)
+        break;
+      case 'es-MX':
+        setCommands(commandsES)
+        break;
+      case 'it-IT':
+        setCommands(commandsIT)
+        break;
+
+      default:
+        break;
+    }
+  }, [language])
+
+
+  const start = () => {
+    SpeechRecognition.startListening({
+      continuous: true,
+      language: language
+    })
+  }
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
+
+  
+
   return (
     <>
+      <div className='container' id='container'>
+      
+      <h1 className='container__title'>COCO</h1>
+      
+     
+      
+      
+      <div className='container__button-section'>
+      
+          <button
+            className='container__button'
+            onTouchStart={start}
+            onMouseDown={start}
+            onTouchEnd={SpeechRecognition.stopListening}
+            onMouseUp={SpeechRecognition.stopListening}
+          >
+
+          </button>
+          
+          {
+            listening &&
+            ( <>
+              <div className="waves wave-1"></div>
+                        
+              <div className="waves wave-2"></div>
+                        
+              <div className="waves wave-3"></div>
+              
+              </>
+            )
+          }
+       
+          
+        </div>
+        
+        <LanguageSet
+          language={language}
+          setLanguage={setLanguage}
+        />
+          
+      </div>
       
     </>
   );
