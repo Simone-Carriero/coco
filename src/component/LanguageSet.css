@@ -1,0 +1,36 @@
+.language-set__text {
+  font-size: 1.5rem;
+}
+
+.language-set__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 4rem;
+}
+
+.language-set img {
+  width: 3rem;
+  border-radius: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  background-image: linear-gradient(#f7f7f7, #e7e7e7);
+  box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
+}
+
+.language-set img:active {
+  transform: scale(.7);
+}
+
+@media only screen and (min-width: 750px) {
+  .language-set {
+    gap: 5rem;
+  }
+
+  .language-set img {
+    width: 4rem;
+  }
+}
