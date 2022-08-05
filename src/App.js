@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import LanguageSet from './component/LanguageSet';
+
+import LanguageSet from './components/language-set/LanguageSet';
+import CommandButton from './components/command-button/CommandButton';
+
 import { commandsEN, commandsES, commandsIT } from './commands';
 
-
-
-
 import './App.css';
+
 
 function App() {
 
@@ -53,39 +54,14 @@ function App() {
     <>
       <div className='container' id='container'>
       
-      <h1 className='container__title'>COCO</h1>
-      
-     
-      
-      
-      <div className='container__button-section'>
-      
-          <button
-            className='container__button'
-            onTouchStart={start}
-            onMouseDown={start}
-            onTouchEnd={SpeechRecognition.stopListening}
-            onMouseUp={SpeechRecognition.stopListening}
-          >
-
-          </button>
-          
-          {
-            listening &&
-            ( <>
-              <div className="waves wave-1"></div>
-                        
-              <div className="waves wave-2"></div>
-                        
-              <div className="waves wave-3"></div>
-              
-              </>
-            )
-          }
-       
-          
-        </div>
+        <h1 className='container__title'>COCO</h1>
         
+        <CommandButton
+          speechRecognition={SpeechRecognition}
+          listening={listening}
+          start={start}
+        />
+      
         <LanguageSet
           language={language}
           setLanguage={setLanguage}

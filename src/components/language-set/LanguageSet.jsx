@@ -1,8 +1,8 @@
 import React from 'react'
 
-import us from '../assets/icons/US.png'
-import mx from '../assets/icons/MX.png'
-import it from '../assets/icons/IT.png'
+import us from '../../assets/icons/US.png'
+import mx from '../../assets/icons/MX.png'
+import it from '../../assets/icons/IT.png'
 
 import './LanguageSet.css'
 
