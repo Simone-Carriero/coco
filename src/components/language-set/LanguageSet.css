@@ -6,31 +6,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   gap: 4rem;
 }
 
-.language-set img {
-  width: 3rem;
+.language-set__wrapper button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
   border-radius: 100%;
+  width: 4rem;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 0.875rem;
   cursor: pointer;
-  border-radius: 50%;
-  background-color: #f7f7f7;
-  border-radius: 50%;
-  background-image: linear-gradient(#f7f7f7, #e7e7e7);
-  box-shadow: 0 3px 8px #aaa, inset 0 2px 3px #fff;
+  border-color: transparent;
 }
 
-.language-set img:active {
-  transform: scale(.7);
+.language-set img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
 }
 
 @media only screen and (min-width: 750px) {
-  .language-set {
-    gap: 5rem;
-  }
-
-  .language-set img {
-    width: 4rem;
+  .language-set__wrapper button {
+    width: 5rem;
   }
 }

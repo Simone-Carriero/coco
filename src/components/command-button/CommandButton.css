@@ -1,19 +1,15 @@
 .command-button {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
 }
 
 .command-button__button {
-  position: relative;
   z-index: 2;
   height: 5rem;
   width: 5rem;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
   background-color: #f7f7f7;
   border-radius: 50%;
@@ -22,50 +18,45 @@
 }
 
 .command-button__button:active {
-  transform: scale(.9);
-  background: #f01414c5;
+  transform: scale(0.9);
+  background: #f14d3c;
 }
-
 
 .waves {
   position: absolute;
-  margin: auto;
+  top: 0;
   left: 0;
+  bottom: 0;
   right: 0;
-  width: 20rem;
-  height: 20rem;
-  background: rgba(0, 0, 0, 0.3);
+  margin: auto;
+  width: 15rem;
+  height: 15rem;
+  background: rgba(0, 0, 0, 0.1);
   opacity: 0;
   border-radius: 100%;
-  animation: waves 3s ease-in-out infinite;
-  background-image: linear-gradient(to right, #6400a4, #5e07b5, #5411c6, #411bd8, #1225eb);
-
-}
-
-.wave-1 {
-  animation-delay: 0s;
-}
-
-.wave-2 {
-  animation-delay: 1s;
-}
-
-.wave-3 {
-  animation-delay: 2s;
+  animation: waves 1s ease-in-out infinite;
+  background-image: linear-gradient(
+    to right,
+    #6400a4,
+    #5e07b5,
+    #5411c6,
+    #411bd8,
+    #1225eb
+  );
 }
 
 @keyframes waves {
   0% {
-    transform: scale(.2, .2);
+    transform: scale(0.2, 0.2);
     opacity: 0;
   }
 
   50% {
-    opacity: 0.9;
+    opacity: 0.2;
   }
 
   100% {
-    transform: scale(.9, .9);
+    transform: scale(0.9, 0.9);
     opacity: 0;
   }
 }
